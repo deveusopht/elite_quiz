@@ -24,22 +24,38 @@ class IntroSliderScreen extends StatefulWidget {
   _GettingStartedScreenState createState() => _GettingStartedScreenState();
 }
 
-class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerProviderStateMixin {
-  late AnimationController buttonController = AnimationController(vsync: this, duration: Duration(milliseconds: 400));
-  late Animation<double> buttonSqueezeanimation = Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(parent: buttonController, curve: Curves.easeInOut));
+class _GettingStartedScreenState extends State<IntroSliderScreen>
+    with TickerProviderStateMixin {
+  late AnimationController buttonController =
+      AnimationController(vsync: this, duration: Duration(milliseconds: 400));
+  late Animation<double> buttonSqueezeanimation =
+      Tween<double>(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(parent: buttonController, curve: Curves.easeInOut));
 
-  late AnimationController circleAnimationController = AnimationController(vsync: this, duration: Duration(seconds: 500))..forward();
-  late Animation<double> circleAnimation = Tween<double>().animate(CurvedAnimation(
+  late AnimationController circleAnimationController =
+      AnimationController(vsync: this, duration: Duration(seconds: 500))
+        ..forward();
+  late Animation<double> circleAnimation =
+      Tween<double>().animate(CurvedAnimation(
     parent: circleAnimationController,
     curve: Curves.easeInCubic,
   ));
 
-  late AnimationController imageSlideAnimationController = AnimationController(vsync: this, duration: Duration(milliseconds: 500))..repeat(reverse: true);
-  late Animation<Offset> imageSlideAnimation = Tween<Offset>(begin: Offset.zero, end: Offset(0.0, -0.025)).animate(CurvedAnimation(parent: imageSlideAnimationController, curve: Curves.easeInOut));
+  late AnimationController imageSlideAnimationController =
+      AnimationController(vsync: this, duration: Duration(milliseconds: 500))
+        ..repeat(reverse: true);
+  late Animation<Offset> imageSlideAnimation =
+      Tween<Offset>(begin: Offset.zero, end: Offset(0.0, -0.025)).animate(
+          CurvedAnimation(
+              parent: imageSlideAnimationController, curve: Curves.easeInOut));
 
-  late AnimationController pageIndicatorAnimationController = AnimationController(vsync: this, duration: Duration(milliseconds: 300));
-  late Tween<Alignment> pageIndicator = AlignmentTween(begin: Alignment.centerLeft, end: Alignment.centerLeft);
-  late Animation<Alignment> pageIndicatorAnimation = pageIndicator.animate(CurvedAnimation(parent: pageIndicatorAnimationController, curve: Curves.easeInOut));
+  late AnimationController pageIndicatorAnimationController =
+      AnimationController(vsync: this, duration: Duration(milliseconds: 300));
+  late Tween<Alignment> pageIndicator =
+      AlignmentTween(begin: Alignment.centerLeft, end: Alignment.centerLeft);
+  late Animation<Alignment> pageIndicatorAnimation = pageIndicator.animate(
+      CurvedAnimation(
+          parent: pageIndicatorAnimationController, curve: Curves.easeInOut));
   late AnimationController animationController;
   late Animation animation;
 
@@ -48,15 +64,18 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
   late List<Slide> slideList = [
     Slide(
       title: AppLocalization.of(context)!.getTranslatedValues("title1")!,
-      description: AppLocalization.of(context)!.getTranslatedValues("description1")!,
+      description:
+          AppLocalization.of(context)!.getTranslatedValues("description1")!,
     ),
     Slide(
       title: AppLocalization.of(context)!.getTranslatedValues("title2")!,
-      description: AppLocalization.of(context)!.getTranslatedValues("description2")!,
+      description:
+          AppLocalization.of(context)!.getTranslatedValues("description2")!,
     ),
     Slide(
       title: AppLocalization.of(context)!.getTranslatedValues("title3")!,
-      description: AppLocalization.of(context)!.getTranslatedValues("description3")!,
+      description:
+          AppLocalization.of(context)!.getTranslatedValues("description3")!,
     ),
   ];
   @override
@@ -143,7 +162,8 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
       child: Container(
         height: MediaQuery.of(context).size.height * (0.1),
         width: MediaQuery.of(context).size.width * (0.175),
-        padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height * (0.025)),
+        padding: EdgeInsets.only(
+            bottom: MediaQuery.of(context).size.height * (0.025)),
         child: Stack(
           children: [
             Align(
@@ -151,7 +171,9 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
               child: Container(
                 height: widthAndHeight,
                 width: widthAndHeight,
-                decoration: BoxDecoration(color: Theme.of(context).primaryColor.withOpacity(0.5), borderRadius: BorderRadius.circular(borderRadius)),
+                decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(borderRadius)),
               ),
             ),
             Align(
@@ -159,7 +181,9 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
               child: Container(
                 height: widthAndHeight,
                 width: widthAndHeight,
-                decoration: BoxDecoration(color: Theme.of(context).primaryColor.withOpacity(0.5), borderRadius: BorderRadius.circular(borderRadius)),
+                decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(borderRadius)),
               ),
             ),
             Align(
@@ -167,7 +191,9 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
               child: Container(
                 height: widthAndHeight,
                 width: widthAndHeight,
-                decoration: BoxDecoration(color: Theme.of(context).primaryColor.withOpacity(0.5), borderRadius: BorderRadius.circular(borderRadius)),
+                decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(borderRadius)),
               ),
             ),
             AnimatedBuilder(
@@ -181,7 +207,9 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
               child: Container(
                 height: widthAndHeight,
                 width: widthAndHeight,
-                decoration: BoxDecoration(color: Theme.of(context).primaryColor, borderRadius: BorderRadius.circular(borderRadius)),
+                decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    borderRadius: BorderRadius.circular(borderRadius)),
               ),
             )
           ],
@@ -197,7 +225,8 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
     );
   }
 
-  Widget _buildBorderedCircle(double radius, double borderWidth, Color color, double padding) {
+  Widget _buildBorderedCircle(
+      double radius, double borderWidth, Color color, double padding) {
     return Container(
       decoration: BoxDecoration(
         shape: BoxShape.circle,
@@ -240,7 +269,10 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
             Text(
               slideList[index].title,
               textAlign: TextAlign.center,
-              style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 25.0, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: Theme.of(context).primaryColor,
+                  fontSize: 25.0,
+                  fontWeight: FontWeight.bold),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height * (0.0175),
@@ -250,7 +282,8 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
               child: Text(
                 slideList[index].description,
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 17.0),
+                style: TextStyle(
+                    color: Theme.of(context).primaryColor, fontSize: 17.0),
               ),
             ),
           ],
@@ -279,7 +312,7 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
               backgroundColor: Theme.of(context).primaryColor,
               onPressed: () async {
                 context.read<SettingsCubit>().changeShowIntroSlider();
-                Navigator.of(context).pushReplacementNamed(Routes.login);
+                Navigator.of(context).pushReplacementNamed(Routes.loginScreen);
               })),
       body: Stack(
         children: [
@@ -289,12 +322,14 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
               left: -55,
               child: CircleAvatar(
                 radius: 60.0,
-                backgroundColor: Theme.of(context).primaryColor.withOpacity(0.2),
+                backgroundColor:
+                    Theme.of(context).primaryColor.withOpacity(0.2),
               )),
           Positioned(
             top: MediaQuery.of(context).size.height * (0.22), left: -20,
             child: AnimatedBuilder(
-              child: _buildFilledCircle(60, Theme.of(context).primaryColor.withOpacity(0.4)),
+              child: _buildFilledCircle(
+                  60, Theme.of(context).primaryColor.withOpacity(0.4)),
               animation: animationController,
               builder: (BuildContext context, Widget? child) {
                 return Transform.rotate(
@@ -309,7 +344,8 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
           Positioned(
             top: MediaQuery.of(context).size.height * (0.22), right: 70,
             child: AnimatedBuilder(
-              child: _buildFilledCircle(50, Theme.of(context).primaryColor.withOpacity(0.6)),
+              child: _buildFilledCircle(
+                  50, Theme.of(context).primaryColor.withOpacity(0.6)),
               animation: animationController1,
               builder: (BuildContext context, Widget? child) {
                 return Transform.rotate(
@@ -324,7 +360,8 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
           Positioned(
             top: MediaQuery.of(context).size.height * (0.075), left: 70,
             child: AnimatedBuilder(
-              child: _buildBorderedCircle(30, 8, Theme.of(context).primaryColor.withOpacity(0.5), 5),
+              child: _buildBorderedCircle(
+                  30, 8, Theme.of(context).primaryColor.withOpacity(0.5), 5),
               animation: animationController,
               builder: (BuildContext context, Widget? child) {
                 return Transform.rotate(
@@ -339,7 +376,8 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
           Positioned(
             top: MediaQuery.of(context).size.height * (0.045), right: -20,
             child: AnimatedBuilder(
-              child: _buildBorderedCircle(35, 6, Theme.of(context).primaryColor.withOpacity(0.45), 5),
+              child: _buildBorderedCircle(
+                  35, 6, Theme.of(context).primaryColor.withOpacity(0.45), 5),
               animation: animationController1,
               builder: (BuildContext context, Widget? child) {
                 return Transform.rotate(
@@ -352,7 +390,9 @@ class _GettingStartedScreenState extends State<IntroSliderScreen> with TickerPro
 
             //_buildBorderedCircle(35, 6, Theme.of(context).primaryColor.withOpacity(0.45), 5)
           ),
-          _buildIntroSlider((context.read<SystemConfigCubit>().state as SystemConfigFetchSuccess).introSliderImages),
+          _buildIntroSlider((context.read<SystemConfigCubit>().state
+                  as SystemConfigFetchSuccess)
+              .introSliderImages),
           _buildPageIndicator(),
         ],
       ),

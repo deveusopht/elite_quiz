@@ -42,6 +42,7 @@ import 'package:flutterquiz/features/tournament/tournamentRepository.dart';
 import 'package:flutterquiz/ui/styles/theme/appTheme.dart';
 import 'package:flutterquiz/ui/styles/theme/themeCubit.dart';
 import 'package:flutterquiz/utils/constants.dart';
+import 'package:flutterquiz/utils/size_config.dart';
 import 'package:flutterquiz/utils/uiUtils.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -76,6 +77,7 @@ Future<Widget> initializeApp() async {
 class GlobalScrollBehavior extends ScrollBehavior {
   @override
   ScrollPhysics getScrollPhysics(BuildContext context) {
+    SizeConfig.init(context);
     return BouncingScrollPhysics();
   }
 }
