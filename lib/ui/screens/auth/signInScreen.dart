@@ -553,7 +553,7 @@ class SignInScreenState extends State<SignInScreen> {
           SizedBox(width: 4),
           CupertinoButton(
             onPressed: () {
-              Navigator.of(context).pushNamed(Routes.signUp);
+              Navigator.of(context).pushNamed(Routes.signupScreen);
             },
             padding: EdgeInsets.all(0),
             child: Text(

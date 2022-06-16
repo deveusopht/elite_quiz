@@ -18,18 +18,18 @@ import 'package:flutterquiz/features/battleRoom/cubits/battleRoomCubit.dart';
 import 'package:flutterquiz/features/battleRoom/cubits/multiUserBattleRoomCubit.dart';
 import 'package:flutterquiz/features/bookmark/bookmarkRepository.dart';
 import 'package:flutterquiz/features/bookmark/cubits/audioQuestionBookmarkCubit.dart';
+import 'package:flutterquiz/features/bookmark/cubits/bookmarkCubit.dart';
 import 'package:flutterquiz/features/bookmark/cubits/guessTheWordBookmarkCubit.dart';
 import 'package:flutterquiz/features/exam/cubits/examCubit.dart';
 import 'package:flutterquiz/features/exam/examRepository.dart';
 import 'package:flutterquiz/features/localization/appLocalizationCubit.dart';
 import 'package:flutterquiz/features/profileManagement/cubits/userDetailsCubit.dart';
-import 'package:flutterquiz/features/bookmark/cubits/bookmarkCubit.dart';
+import 'package:flutterquiz/features/profileManagement/profileManagementRepository.dart';
 import 'package:flutterquiz/features/quiz/cubits/comprehensionCubit.dart';
 import 'package:flutterquiz/features/quiz/cubits/quizCategoryCubit.dart';
 import 'package:flutterquiz/features/quiz/cubits/subCategoryCubit.dart';
 import 'package:flutterquiz/features/quiz/quizRepository.dart';
 import 'package:flutterquiz/features/settings/settingsCubit.dart';
-import 'package:flutterquiz/features/profileManagement/profileManagementRepository.dart';
 import 'package:flutterquiz/features/settings/settingsLocalDataSource.dart';
 import 'package:flutterquiz/features/settings/settingsRepository.dart';
 import 'package:flutterquiz/features/statistic/cubits/statisticsCubit.dart';
@@ -42,9 +42,9 @@ import 'package:flutterquiz/features/tournament/tournamentRepository.dart';
 import 'package:flutterquiz/ui/styles/theme/appTheme.dart';
 import 'package:flutterquiz/ui/styles/theme/themeCubit.dart';
 import 'package:flutterquiz/utils/constants.dart';
+import 'package:flutterquiz/utils/size_config.dart';
 import 'package:flutterquiz/utils/uiUtils.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:hive_flutter/hive_flutter.dart';
 
 Future<Widget> initializeApp() async {
@@ -76,6 +76,7 @@ Future<Widget> initializeApp() async {
 class GlobalScrollBehavior extends ScrollBehavior {
   @override
   ScrollPhysics getScrollPhysics(BuildContext context) {
+    SizeConfig.init(context);
     return BouncingScrollPhysics();
   }
 }
@@ -191,7 +192,7 @@ class MyApp extends StatelessWidget {
             supportedLocales: supporatedLocales.map((languageCode) {
               return UiUtils.getLocaleFromLanguageCode(languageCode);
             }).toList(),
-            initialRoute: Routes.splash,
+            initialRoute: Routes.signUpOptions,
             onGenerateRoute: Routes.onGenerateRouted,
           );
         },

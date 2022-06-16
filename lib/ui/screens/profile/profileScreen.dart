@@ -466,7 +466,7 @@ class ProfileScreen extends StatelessWidget {
                                           context.read<AuthCubit>().signOut();
                                           Navigator.of(context)
                                               .pushReplacementNamed(
-                                                  Routes.login);
+                                                  Routes.loginScreen);
                                         },
                                         child: Text(
                                           AppLocalization.of(context)!
@@ -549,7 +549,7 @@ class ProfileScreen extends StatelessWidget {
                     context,
                     false);
                 Navigator.of(context).pop();
-                Navigator.of(context).pushReplacementNamed(Routes.login);
+                Navigator.of(context).pushReplacementNamed(Routes.loginScreen);
               } else if (state is DeleteAccountFailure) {
                 UiUtils.setSnackbar(
                     AppLocalization.of(context)!.getTranslatedValues(

@@ -38,7 +38,7 @@ class AlreadyLoggedInDialog extends StatelessWidget {
             onTap: () {
               onAlreadyLoggedInCallBack?.call();
               Navigator.of(context).popUntil((route) => route.isFirst);
-              Navigator.of(context).pushReplacementNamed(Routes.login);
+              Navigator.of(context).pushReplacementNamed(Routes.loginScreen);
             },
             child: Container(
               width: MediaQuery.of(context).size.width,

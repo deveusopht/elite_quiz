@@ -2,11 +2,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterquiz/ui/screens/aboutAppScreen.dart';
 import 'package:flutterquiz/ui/screens/appSettingsScreen.dart';
+import 'package:flutterquiz/ui/screens/auth/new_login_screen.dart';
+import 'package:flutterquiz/ui/screens/auth/new_sign_up_screen.dart';
+import 'package:flutterquiz/ui/screens/auth/onBoardingScreen.dart';
 import 'package:flutterquiz/ui/screens/auth/otpScreen.dart';
-import 'package:flutterquiz/ui/screens/auth/signInScreen.dart';
-import 'package:flutterquiz/ui/screens/auth/signUpScreen.dart';
+import 'package:flutterquiz/ui/screens/auth/sign_up_options.dart';
+import 'package:flutterquiz/ui/screens/auth/sign_up_process.dart';
 import 'package:flutterquiz/ui/screens/badgesScreen.dart';
 import 'package:flutterquiz/ui/screens/battle/battleRoomFindOpponentScreen.dart';
+import 'package:flutterquiz/ui/screens/battle/battleRoomQuizScreen.dart';
+import 'package:flutterquiz/ui/screens/battle/multiUserBattleRoomQuizScreen.dart';
+import 'package:flutterquiz/ui/screens/battle/multiUserBattleRoomResultScreen.dart';
 import 'package:flutterquiz/ui/screens/bookmarkScreen.dart';
 import 'package:flutterquiz/ui/screens/coinHistoryScreen.dart';
 import 'package:flutterquiz/ui/screens/coinStoreScreen.dart';
@@ -17,8 +23,7 @@ import 'package:flutterquiz/ui/screens/introSliderScreen.dart';
 import 'package:flutterquiz/ui/screens/leaderBoardScreen.dart';
 import 'package:flutterquiz/ui/screens/notificationScreen.dart';
 import 'package:flutterquiz/ui/screens/profile/profileScreen.dart';
-import 'package:flutterquiz/ui/screens/battle/battleRoomQuizScreen.dart';
-
+import 'package:flutterquiz/ui/screens/profile/selectProfilePictureScreen.dart';
 import 'package:flutterquiz/ui/screens/quiz/bookmarkQuizScreen.dart';
 import 'package:flutterquiz/ui/screens/quiz/categoryScreen.dart';
 import 'package:flutterquiz/ui/screens/quiz/contestLeaderboardScreen.dart';
@@ -26,22 +31,16 @@ import 'package:flutterquiz/ui/screens/quiz/contestScreen.dart';
 import 'package:flutterquiz/ui/screens/quiz/funAndLearnScreen.dart';
 import 'package:flutterquiz/ui/screens/quiz/funAndLearnTitleScreen.dart';
 import 'package:flutterquiz/ui/screens/quiz/guessTheWordQuizScreen.dart';
-import 'package:flutterquiz/ui/screens/battle/multiUserBattleRoomQuizScreen.dart';
-import 'package:flutterquiz/ui/screens/battle/multiUserBattleRoomResultScreen.dart';
 import 'package:flutterquiz/ui/screens/quiz/levelsScreen.dart';
+import 'package:flutterquiz/ui/screens/quiz/quizScreen.dart';
+import 'package:flutterquiz/ui/screens/quiz/resultScreen.dart';
 import 'package:flutterquiz/ui/screens/quiz/reviewAnswersScreen.dart';
 import 'package:flutterquiz/ui/screens/quiz/selfChallengeQuestionsScreen.dart';
 import 'package:flutterquiz/ui/screens/quiz/selfChallengeScreen.dart';
-
 import 'package:flutterquiz/ui/screens/quiz/subCategoryAndLevelScreen.dart';
-import 'package:flutterquiz/ui/screens/quiz/quizScreen.dart';
-import 'package:flutterquiz/ui/screens/quiz/resultScreen.dart';
 import 'package:flutterquiz/ui/screens/quiz/subCategoryScreen.dart';
-
 import 'package:flutterquiz/ui/screens/referAndEarnScreen.dart';
 import 'package:flutterquiz/ui/screens/rewards/rewardsScreen.dart';
-import 'package:flutterquiz/ui/screens/profile/selectProfilePictureScreen.dart';
-
 import 'package:flutterquiz/ui/screens/splashScreen.dart';
 import 'package:flutterquiz/ui/screens/statisticsScreen.dart';
 import 'package:flutterquiz/ui/screens/tournament/tournamentDetailsScreen.dart';
@@ -50,9 +49,16 @@ import 'package:flutterquiz/ui/screens/wallet/walletScreen.dart';
 
 class Routes {
   static const home = "/";
-  static const login = "login";
+  static const onBoardingScreen = "onBoardingScreen";
+  static const signUpOptions = "signupoptions";
+
+  static const loginScreen = "login";
+  static const signupScreen = "signupScreen";
+  static const signUpProcess = "signupprocess";
+
+  // static const login = "login";
   static const splash = 'splash';
-  static const signUp = "signUp";
+  // static const signUp = "signUp";
   static const introSlider = "introSlider";
   static const selectProfile = "selectProfile";
   static const quiz = "/quiz";
@@ -114,10 +120,23 @@ class Routes {
         return HomeScreen.route(routeSettings);
       case introSlider:
         return CupertinoPageRoute(builder: (context) => IntroSliderScreen());
-      case login:
-        return CupertinoPageRoute(builder: (context) => SignInScreen());
-      case signUp:
-        return CupertinoPageRoute(builder: (context) => SignUpScreen());
+      case onBoardingScreen:
+        return CupertinoPageRoute(builder: (context) => OnBoarding());
+
+      case loginScreen:
+        // case login:
+        // return CupertinoPageRoute(builder: (context) => SignInScreen());
+        return CupertinoPageRoute(builder: (context) => Login());
+
+      case signUpOptions:
+        return CupertinoPageRoute(builder: (context) => SignUpOptions());
+      case signupScreen:
+        return CupertinoPageRoute(builder: (context) => SignUp());
+      case signUpProcess:
+        return CupertinoPageRoute(builder: (context) => SignUpProcess());
+
+      // case signUp:
+      //   return CupertinoPageRoute(builder: (context) => SignUpScreen());
       case otpScreen:
         return OtpScreen.route(routeSettings);
       case subcategoryAndLevel:

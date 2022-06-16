@@ -116,7 +116,8 @@ class _SplashScreenState extends State<SplashScreen>
           Navigator.of(context)
               .pushReplacementNamed(Routes.home, arguments: false);
         } else {
-          Navigator.of(context).pushReplacementNamed(Routes.login);
+          Navigator.of(context).pushReplacementNamed(Routes.onBoardingScreen);
+          // Navigator.of(context).pushReplacementNamed(Routes.login);
         }
       }
     }

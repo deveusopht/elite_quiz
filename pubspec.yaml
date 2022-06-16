@@ -95,6 +95,10 @@ flutter:
     - assets/images/emojis/
     - assets/images/coins/
 
+    - assets/icons/
+    - assets/images/quiz_categories/
+    - assets/images/quiz_types/
+
     - assets/languages/
     - assets/animations/
 

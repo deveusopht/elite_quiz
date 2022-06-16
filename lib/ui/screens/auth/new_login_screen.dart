@@ -1,5 +1,17 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import ''
+import 'package:flutterquiz/ui/widgets/default_layout.dart';
+
+import '../../../utils/assets.dart';
+import '../../../utils/constants.dart';
+import '../../../utils/widgets_util.dart';
+import '../../widgets/custom_button.dart';
+import '../../widgets/custom_divider.dart';
+import '../../widgets/custom_text_field.dart';
+import '../../widgets/social_button.dart';
+import '../../widgets/terms.dart';
+import '../../widgets/title_text.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -57,9 +69,7 @@ class Login extends StatelessWidget {
             ),
             WidgetsUtil.verticalSpace24,
             InkWell(
-              onTap: () => Get.to(
-                () => const ResetPassword(),
-              ),
+              // onTap: () => Navigator.of(context).pushNamed(Routes.login),
               child: TitleText(
                 text: 'Forgot Password?',
                 size: Constants.bodyNormal,
