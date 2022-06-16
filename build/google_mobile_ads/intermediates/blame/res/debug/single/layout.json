@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "E:\\FLUTTER PROJECTS\\Elite Quiz Flutter Code -v.2.0.1\\build\\google_mobile_ads\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "C:\\Users\\LENOVO\\.gradle\\caches\\transforms-2\\files-2.1\\f5e0ff2766f7c46de596d13cb097787d\\core-1.6.0\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "E:\\FLUTTER PROJECTS\\Elite Quiz Flutter Code -v.2.0.1\\build\\google_mobile_ads\\intermediates\\res\\merged\\debug\\layout\\custom_dialog.xml",
+        "source": "C:\\Users\\LENOVO\\.gradle\\caches\\transforms-2\\files-2.1\\f5e0ff2766f7c46de596d13cb097787d\\core-1.6.0\\res\\layout\\custom_dialog.xml"
+    },
+    {
+        "merged": "E:\\FLUTTER PROJECTS\\Elite Quiz Flutter Code -v.2.0.1\\build\\google_mobile_ads\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
+        "source": "C:\\Users\\LENOVO\\.gradle\\caches\\transforms-2\\files-2.1\\f5e0ff2766f7c46de596d13cb097787d\\core-1.6.0\\res\\layout\\notification_action.xml"
+    },
+    {
+        "merged": "E:\\FLUTTER PROJECTS\\Elite Quiz Flutter Code -v.2.0.1\\build\\google_mobile_ads\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "C:\\Users\\LENOVO\\.gradle\\caches\\transforms-2\\files-2.1\\f5e0ff2766f7c46de596d13cb097787d\\core-1.6.0\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "E:\\FLUTTER PROJECTS\\Elite Quiz Flutter Code -v.2.0.1\\build\\google_mobile_ads\\intermediates\\res\\merged\\debug\\layout\\browser_actions_context_menu_row.xml",
+        "source": "C:\\Users\\LENOVO\\.gradle\\caches\\transforms-2\\files-2.1\\233b9a83443b41724bb30985659d9579\\browser-1.0.0\\res\\layout\\browser_actions_context_menu_row.xml"
+    },
+    {
+        "merged": "E:\\FLUTTER PROJECTS\\Elite Quiz Flutter Code -v.2.0.1\\build\\google_mobile_ads\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\LENOVO\\.gradle\\caches\\transforms-2\\files-2.1\\f5e0ff2766f7c46de596d13cb097787d\\core-1.6.0\\res\\layout\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "E:\\FLUTTER PROJECTS\\Elite Quiz Flutter Code -v.2.0.1\\build\\google_mobile_ads\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\LENOVO\\.gradle\\caches\\transforms-2\\files-2.1\\f5e0ff2766f7c46de596d13cb097787d\\core-1.6.0\\res\\layout\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "E:\\FLUTTER PROJECTS\\Elite Quiz Flutter Code -v.2.0.1\\build\\google_mobile_ads\\intermediates\\res\\merged\\debug\\layout\\browser_actions_context_menu_page.xml",
+        "source": "C:\\Users\\LENOVO\\.gradle\\caches\\transforms-2\\files-2.1\\233b9a83443b41724bb30985659d9579\\browser-1.0.0\\res\\layout\\browser_actions_context_menu_page.xml"
+    }
+]
