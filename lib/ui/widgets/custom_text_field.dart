@@ -26,12 +26,14 @@ class CustomTextField extends StatelessWidget {
   bool isDark = false;
   final TextEditingController? controller;
   final TextInputType? textInputType;
-  final Function(dynamic)? validator;
+  final String? Function(String?)? validator;
   final bool? hidetext;
+  final String? obscuringCharacter;
 
   CustomTextField({
     Key? key,
     this.label,
+    this.obscuringCharacter,
     this.hidetext,
     this.controller,
     required this.hint,
@@ -85,9 +87,12 @@ class CustomTextField extends StatelessWidget {
           padding: const EdgeInsets.all(0.0),
           child: TextFormField(
             controller: controller,
+            validator: validator,
             maxLines: maxLines ?? 1,
             focusNode: node,
             onTap: onTap,
+            obscureText: hidetext!,
+            obscuringCharacter: obscuringCharacter!,
             decoration: InputDecoration(
               filled: true,
               fillColor: fillColor ?? Constants.white,
