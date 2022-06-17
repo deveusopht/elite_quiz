@@ -2,9 +2,11 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
+import '../../../app/appLocalization.dart';
 import '../../../app/routes.dart';
 import '../../../utils/assets.dart';
 import '../../../utils/constants.dart';
+import '../../../utils/validators.dart';
 import '../../../utils/widgets_util.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_divider.dart';
@@ -15,7 +17,12 @@ import '../../widgets/terms.dart';
 import '../../widgets/title_text.dart';
 
 class Login extends StatelessWidget {
-  const Login({Key? key}) : super(key: key);
+  Login({Key? key}) : super(key: key);
+
+  TextEditingController edtEmail = new TextEditingController();
+  TextEditingController edtPwd = new TextEditingController();
+  TextEditingController edtCPwd = new TextEditingController();
+  bool _obscureText = true, _obscureTextCn = true, isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -50,17 +57,40 @@ class Login extends StatelessWidget {
             ),
             WidgetsUtil.verticalSpace24,
             CustomTextField(
+              controller: edtEmail,
               label: 'Email Address',
-              hint: 'Your email address',
+              textInputType: TextInputType.emailAddress,
+              hint: AppLocalization.of(context)!
+                      .getTranslatedValues('emailLbl')! +
+                  "*",
+              validator: (value) {
+                return Validators.validateEmail(
+                    value!,
+                    AppLocalization.of(context)!
+                        .getTranslatedValues('emailRequiredMsg')!,
+                    AppLocalization.of(context)!
+                        .getTranslatedValues('VALID_EMAIL'));
+              },
               prefixIcon: Assets.mail,
             ),
             WidgetsUtil.verticalSpace16,
+
+            //password field
+
             CustomTextField(
+              hidetext: _obscureText,
+              obscuringCharacter: "*",
+              validator: (val) => val!.isEmpty
+                  ? '${AppLocalization.of(context)!.getTranslatedValues('pwdLengthMsg')}'
+                  : null,
               label: 'Password',
-              hint: 'Your password',
+              hint:
+                  AppLocalization.of(context)!.getTranslatedValues('pwdLbl')! +
+                      "*",
               prefixIcon: Assets.password,
-              suffixIcon: Assets.eye,
+              suffixIcon: _obscureText ? Assets.eye : Assets.closeEye,
               onSuffixTap: () {
+                _obscureText = !_obscureText;
                 log('Suffix');
               },
             ),
@@ -70,7 +100,7 @@ class Login extends StatelessWidget {
             ),
             WidgetsUtil.verticalSpace24,
             InkWell(
-              // onTap: () => Navigator.of(context).pushNamed(Routes.login),
+              onTap: () => Navigator.of(context).pushNamed(Routes.loginScreen),
               child: TitleText(
                 text: 'Forgot Password?',
                 size: Constants.bodyNormal,

@@ -8,10 +8,6 @@ import 'package:flutterquiz/ui/screens/auth/signInScreen.dart';
 import 'package:flutterquiz/ui/screens/auth/new_login_screen.dart';
 
 import 'package:flutterquiz/ui/screens/auth/signUpScreen.dart';
-import 'package:flutterquiz/ui/screens/auth/widgets/new_sign_up_screen.dart';
-import 'package:flutterquiz/ui/screens/auth/widgets/onBoardingScreen.dart';
-import 'package:flutterquiz/ui/screens/auth/widgets/sign_up_options.dart';
-import 'package:flutterquiz/ui/screens/auth/widgets/sign_up_process.dart';
 import 'package:flutterquiz/ui/screens/badgesScreen.dart';
 import 'package:flutterquiz/ui/screens/battle/battleRoomFindOpponentScreen.dart';
 import 'package:flutterquiz/ui/screens/bookmarkScreen.dart';
@@ -54,6 +50,11 @@ import 'package:flutterquiz/ui/screens/statisticsScreen.dart';
 import 'package:flutterquiz/ui/screens/tournament/tournamentDetailsScreen.dart';
 import 'package:flutterquiz/ui/screens/tournament/tournamentScreen.dart';
 import 'package:flutterquiz/ui/screens/wallet/walletScreen.dart';
+
+import '../ui/screens/auth/new_sign_up_screen.dart';
+import '../ui/screens/auth/onBoardingScreen.dart';
+import '../ui/screens/auth/sign_up_options.dart';
+import '../ui/screens/auth/sign_up_process.dart';
 
 class Routes {
   static const home = "/";

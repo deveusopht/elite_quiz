@@ -47,7 +47,7 @@ dependencies:
   hive: ^2.0.4
   hive_flutter: ^1.0.0
   http: ^0.13.3
-  image_picker: ^0.8.0+1
+  image_picker: ^0.8.5+3
   in_app_purchase: ^2.0.0
   internet_connection_checker: ^0.0.1+2
   device_info_plus: ^3.2.1
