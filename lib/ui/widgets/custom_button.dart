@@ -4,17 +4,19 @@ import 'package:flutterquiz/ui/widgets/title_text.dart';
 import '../../utils/constants.dart';
 
 class CustomButton extends StatelessWidget {
-  final String text;
+  final String? text;
   final double? horizontalMargin;
   final double? verticalMargin;
   final Function() onPressed;
   final Color? backgroundColor;
   final Color? textColor;
   final double? height;
+  final bool? isLoading;
 
   const CustomButton({
     Key? key,
-    required this.text,
+    this.text,
+    this.isLoading = false,
     this.horizontalMargin,
     this.verticalMargin,
     required this.onPressed,
@@ -58,13 +60,21 @@ class CustomButton extends StatelessWidget {
             backgroundColor ?? Constants.primaryColor,
           ),
         ),
-        child: TitleText(
-          text: text,
-          align: TextAlign.center,
-          textColor: textColor ?? Constants.white,
-          size: Constants.bodyNormal,
-          weight: FontWeight.w500,
-        ),
+        child: isLoading!
+            ? Center(
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation(
+                    Constants.white,
+                  ),
+                ),
+              )
+            : TitleText(
+                text: text!,
+                align: TextAlign.center,
+                textColor: textColor ?? Constants.white,
+                size: Constants.bodyNormal,
+                weight: FontWeight.w500,
+              ),
       ),
     );
   }

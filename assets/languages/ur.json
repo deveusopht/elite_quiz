@@ -449,9 +449,10 @@
   "youWillGet" : "You will get",
   "theyWillGet" : "They will get",
 
-  "wonMathQuiz" : "Won Math Quiz"
-   
-
-
-
+  "wonMathQuiz" : "Won Math Quiz",
+  "invalidEmail": "غلط ای میل",
+  "whatIsEmail": "آپ کا ای میل کیا ہے؟",
+  "whatIsPassword": "آپ کا پاس ورڈ کیا ہے؟",
+  "confirmPassword": "اپنے پاس ورڈ کی تصدیق کریں!",
+  "passwordNotMatch": "پاس ورڈز مماثل نہیں ہیں!"
 }

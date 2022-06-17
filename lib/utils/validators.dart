@@ -1,8 +1,11 @@
 class Validators {
-  static String? validateEmail(String value, String ?emailRequiredMessage, String? validEmailMessage) {
+  static String? validateEmail(
+      String value, String? emailRequiredMessage, String? validEmailMessage) {
+    print('Validation');
     if (value.length == 0) {
       return emailRequiredMessage;
-    } else if (!RegExp(r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)"
+    } else if (!RegExp(
+            r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)"
             r"*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+"
             r"[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
         .hasMatch(value)) {
@@ -12,13 +15,27 @@ class Validators {
     }
   }
 
+  static String? validatePassword(
+    String value,
+    String? passwordMessage,
+  ) {
+    if (value.length == 0) {
+      return passwordMessage;
+    } else if (value.length < 6) {
+      return passwordMessage;
+    } else {
+      return null;
+    }
+  }
+
   static bool isValidEmail(String value) {
     if (value.isEmpty) {
       return false;
     }
-    final pattern = RegExp(r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)"
-        r"*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+"
-        r"[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+    final pattern =
+        RegExp(r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)"
+            r"*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+"
+            r"[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
     return pattern.hasMatch(value);
   }
 

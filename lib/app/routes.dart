@@ -21,6 +21,7 @@ import 'package:flutterquiz/ui/screens/exam/examsScreen.dart';
 import 'package:flutterquiz/ui/screens/home/homeScreen.dart';
 import 'package:flutterquiz/ui/screens/introSliderScreen.dart';
 import 'package:flutterquiz/ui/screens/leaderBoardScreen.dart';
+import 'package:flutterquiz/ui/screens/new_splash.dart';
 import 'package:flutterquiz/ui/screens/notificationScreen.dart';
 import 'package:flutterquiz/ui/screens/profile/profileScreen.dart';
 import 'package:flutterquiz/ui/screens/profile/selectProfilePictureScreen.dart';
@@ -41,7 +42,6 @@ import 'package:flutterquiz/ui/screens/quiz/subCategoryAndLevelScreen.dart';
 import 'package:flutterquiz/ui/screens/quiz/subCategoryScreen.dart';
 import 'package:flutterquiz/ui/screens/referAndEarnScreen.dart';
 import 'package:flutterquiz/ui/screens/rewards/rewardsScreen.dart';
-import 'package:flutterquiz/ui/screens/splashScreen.dart';
 import 'package:flutterquiz/ui/screens/statisticsScreen.dart';
 import 'package:flutterquiz/ui/screens/tournament/tournamentDetailsScreen.dart';
 import 'package:flutterquiz/ui/screens/tournament/tournamentScreen.dart';
@@ -115,7 +115,7 @@ class Routes {
     print("Current Route is $currentRoute");
     switch (routeSettings.name) {
       case splash:
-        return CupertinoPageRoute(builder: (context) => SplashScreen());
+        return CupertinoPageRoute(builder: (context) => Splash());
       case home:
         return HomeScreen.route(routeSettings);
       case introSlider:

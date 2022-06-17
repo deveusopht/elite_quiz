@@ -24,13 +24,15 @@ class CustomTextField extends StatelessWidget {
   bool isDark = false;
   final TextEditingController? controller;
   final TextInputType? textInputType;
-  final Function(dynamic)? validator;
-  final bool? hidetext;
+  final String? Function(String?)? validator;
+  final bool? hideText;
+  final void Function(String)? onFieldSubmitted;
+  final TextInputAction? textInputAction;
 
   CustomTextField({
     Key? key,
     this.label,
-    this.hidetext,
+    this.hideText,
     this.controller,
     required this.hint,
     this.prefixIcon,
@@ -49,6 +51,8 @@ class CustomTextField extends StatelessWidget {
     this.validator,
     this.mainAxisAlignment,
     this.horizontalMargin,
+    this.onFieldSubmitted,
+    this.textInputAction,
   }) : super(key: key);
 
   bool isColorDark(Color color) {
@@ -85,8 +89,11 @@ class CustomTextField extends StatelessWidget {
             controller: controller,
             maxLines: maxLines ?? 1,
             focusNode: node,
-            obscureText: hidetext ?? false,
+            obscureText: hideText ?? false,
             onTap: onTap,
+            validator: validator,
+            onFieldSubmitted: onFieldSubmitted,
+            textInputAction: textInputAction,
             decoration: InputDecoration(
               filled: true,
               fillColor: fillColor ?? Constants.white,

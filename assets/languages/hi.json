@@ -460,6 +460,10 @@
   "youWillGet" : "You will get",
   "theyWillGet" : "They will get",
   
-  "wonMathQuiz" : "Won Math Quiz"
-   
+  "wonMathQuiz" : "Won Math Quiz",
+  "invalidEmail": "अवैध ईमेल",
+  "whatIsEmail": "तुम्हारा ईमेल क्या है?",
+  "whatIsPassword": "आपका पासवर्ड क्या है?",
+  "confirmPassword": "अपने पासवर्ड की पुष्टि करें!",
+  "passwordNotMatch": "पासवर्ड मेल नहीं खाते!"
 }

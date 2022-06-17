@@ -76,7 +76,6 @@ Future<Widget> initializeApp() async {
 class GlobalScrollBehavior extends ScrollBehavior {
   @override
   ScrollPhysics getScrollPhysics(BuildContext context) {
-    SizeConfig.init(context);
     return BouncingScrollPhysics();
   }
 }
@@ -91,7 +90,6 @@ class MyApp extends StatelessWidget {
     precacheImage(AssetImage(UiUtils.getImagePath("map_finding.png")), context);
     precacheImage(
         AssetImage(UiUtils.getImagePath("scratchCardCover.png")), context);
-
     return MultiBlocProvider(
       //providing global providers
       providers: [
@@ -175,6 +173,7 @@ class MyApp extends StatelessWidget {
 
           return MaterialApp(
             builder: (context, widget) {
+              SizeConfig.init(context);
               return ScrollConfiguration(
                   behavior: GlobalScrollBehavior(), child: widget!);
             },
@@ -192,7 +191,7 @@ class MyApp extends StatelessWidget {
             supportedLocales: supporatedLocales.map((languageCode) {
               return UiUtils.getLocaleFromLanguageCode(languageCode);
             }).toList(),
-            initialRoute: Routes.signUpOptions,
+            initialRoute: Routes.splash,
             onGenerateRoute: Routes.onGenerateRouted,
           );
         },

@@ -433,13 +433,10 @@
   "appUnderMaintenance" : "We apologize for the inconvenience, but we are performing some maintenance. We will back soon",
   "youWillGet" : "You will get",
   "theyWillGet" : "They will get",
-  "wonMathQuiz" : "Won Math Quiz"
-  
-   
-
-
-  
-  
- 
-  
+  "wonMathQuiz" : "Won Math Quiz",
+  "invalidEmail": "Invalid Email",
+  "whatIsEmail": "What's your email?",
+  "whatIsPassword": "What's your password?",
+  "confirmPassword": "Confirm your password!",
+  "passwordNotMatch": "Password don't match!"
 }
