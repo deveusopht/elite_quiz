@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterquiz/app/appLocalization.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../utils/constants.dart';
@@ -19,7 +20,7 @@ class Terms extends StatelessWidget {
       child: RichText(
         textAlign: TextAlign.center,
         text: TextSpan(
-          text: 'By continuing, you agree to the ',
+          text: AppLocalization.of(context)!.getTranslatedValues('termsLbl'),
           style: GoogleFonts.rubik(
             fontSize: Constants.bodySmall,
             fontWeight: FontWeight.w400,
@@ -31,7 +32,8 @@ class Terms extends StatelessWidget {
                 ..onTap = () {
                   log('Terms of services');
                 },
-              text: 'Terms of Services',
+              text: AppLocalization.of(context)!
+                  .getTranslatedValues('termsAndServicesLbl'),
               style: GoogleFonts.rubik(
                 fontSize: Constants.bodySmall,
                 fontWeight: FontWeight.w500,
@@ -39,7 +41,8 @@ class Terms extends StatelessWidget {
               ),
             ),
             TextSpan(
-              text: ' & ',
+              text: AppLocalization.of(context)!
+                  .getTranslatedValues('termsLblAnd'),
               style: GoogleFonts.rubik(
                 fontSize: Constants.bodySmall,
                 fontWeight: FontWeight.w400,
@@ -47,7 +50,8 @@ class Terms extends StatelessWidget {
               ),
             ),
             TextSpan(
-              text: 'Privacy Policy',
+              text: AppLocalization.of(context)!
+                  .getTranslatedValues('termsLblPrivacyPolicy'),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   log('Privacy Policy');

@@ -27,14 +27,16 @@ class _SignUpProcessState extends State<SignUpProcess> {
 
   int selectedProcess = 0;
 
-  List<String> signUpProcess = [
-    'What\’s your email?',
-    'What\’s your password?',
-    'Create a username',
-  ];
+  List<String> signUpProcess = [];
 
   @override
   Widget build(BuildContext context) {
+    signUpProcess = [
+      AppLocalization.of(context)!.getTranslatedValues('signUpProcessIndex0')!,
+      AppLocalization.of(context)!.getTranslatedValues('signUpProcessIndex1')!,
+      AppLocalization.of(context)!.getTranslatedValues('signUpProcessIndex2')!,
+    ];
+
     return DefaultLayout(
       title: signUpProcess[selectedProcess],
       child: Column(

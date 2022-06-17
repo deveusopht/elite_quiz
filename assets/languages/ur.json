@@ -23,6 +23,35 @@
   "otpNotMatch": "او ٹی پی مماثل نہیں ہے۔",
 
   "userLoginLbl": "صارف لاگ ان",
+  "loginWithGooleLbl" : "گوگل کے ساتھ لاگ ان کریں",
+  "loginWithFacebookLbl" : "فیس بک کے ساتھ لاگ ان کریں",
+  "or": "یا",
+  
+  
+  "termsAndServicesLbl" :  " جاری رکھ کر، آپ اس سے اتفاق کرتے ہیں۔",
+
+  "termsLbl": " سروس کی شرائط",
+"termsLblAnd": " اور ",
+"termsLblPrivacyPolicy": "رازداری کی پالیسی",
+
+
+"onBoardingIndex0":"گیمفائیڈ کوئزز بنائیں آسان ہو جاتا ہے",
+"onBoardingIndex1":"اپنے علم کو جانچنے کے لیے کوئز تلاش کریں",
+"onBoardingIndex2":"دوستوں کے ساتھ چیلنجوں میں حصہ لیں",
+
+
+
+"signUpProcessIndex0":"آپ کا ای میل کیا ہے؟",
+"signUpProcessIndex1":"آپ کا پاس ورڈ کیا ہے؟",
+"signUpProcessIndex2":"ایک صارف نام بنائیں",
+
+"loginOrSignUpLbl" : "لاگ ان یا سائن اپ کریں",
+
+
+
+
+
+  "emailFldLbl": "ای میل ایڈریس",
   "emailRequiredMsg": "ای میل درکار ہے۔",
   "validEmail": "درست ای میل درج کریں",
   "emailLbl": "ای میل۔",
@@ -30,8 +59,9 @@
   "pwdLbl": "پاس ورڈ",
   "loginLbl": "لاگ ان کریں",
   "enterEmailLbl": "ای میل پتہ درج کریں۔",
-  "forgotPwdLbl": "پاسورڈ بھول گے",
+  "forgotPwdLbl": "پاس ورڈ بھول گئے؟",
   "resetPwdLbl": "پاس ورڈ ری سیٹ",
+  "enterEmlTextLbl" : "اپنا ای میل درج کریں اور ہم آپ کو آپ کا پاس ورڈ دوبارہ ترتیب دینے کے لیے ایک لنک بھیجیں گے",
   "resetEnterEmailLbl": "اپنے اکاؤنٹ سے وابستہ ای میل پتہ درج کریں۔",
   "pwdResetLinkLbl": "پاس ورڈ ری سیٹ لنک آپ کے میل پر بھیج دیا گیا ہے۔",
   "orLbl": "یا",

@@ -22,6 +22,34 @@
   "otpNotMatch": "ओटीपी मेल नहीं खाता",
 
   "userLoginLbl": "उपयोगकर्ता लॉगिन",
+  "loginWithGooleLbl" : "Google से लॉगिन करें",
+  "loginWithFacebookLbl" : "फेसबुक से लॉगिन करें",
+  "or": "या",
+
+  "termsAndServicesLbl" :  "जारी रखकर, आप इससे सहमत हैं ",
+  "termsLbl": " सेवाओं की शर्तें",
+"termsLblAnd": " और ",
+"termsLblPrivacyPolicy": "गोपनीयता नीति",
+
+
+
+"onBoardingIndex0":"सरलीकृत क्विज़ बनाना सरल हो जाता है,",
+"onBoardingIndex1":"अपने ज्ञान का परीक्षण करने के लिए प्रश्नोत्तरी खोजें",
+"onBoardingIndex2":"दोस्तों के साथ चुनौतियों में भाग लें",
+
+
+
+"signUpProcessIndex0":"तुम्हारा ईमेल क्या है?",
+"signUpProcessIndex1":"आपका पासवर्ड क्या है?",
+"signUpProcessIndex2":"कोई उपयोगकर्ता नाम बनाएं",
+
+"loginOrSignUpLbl" : "लॉगिन या साइन अप करें",
+
+
+
+
+
+  "emailFldLbl": "ईमेल पता",
   "emailRequiredMsg": "ईमेल की जरूरत है",
   "validEmail": "मान्य ईमेल दर्ज करें",
   "emailLbl": "ईमेल",
@@ -29,7 +57,8 @@
   "pwdLbl": "पासवर्ड",
   "loginLbl": "लॉगइन",
   "enterEmailLbl": "ईमेल पता दर्ज",
-  "forgotPwdLbl": "पासवर्ड भूल गए",
+  "forgotPwdLbl": "पासवर्ड भूल गए?",
+  "enterEmlTextLbl" : "अपना ईमेल दर्ज करें और हम आपको आपका पासवर्ड रीसेट करने के लिए एक लिंक भेजेंगे",
   "resetPwdLbl": "पासवर्ड रीसेट",
   "resetEnterEmailLbl": "अपने खाते से संबद्ध ईमेल पता दर्ज करें",
   "pwdResetLinkLbl": "पासवर्ड रीसेट लिंक आपके मेल पर भेज दिया गया है",

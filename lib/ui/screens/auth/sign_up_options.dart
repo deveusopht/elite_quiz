@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutterquiz/app/appLocalization.dart';
 import 'package:flutterquiz/ui/screens/auth/signUpScreen.dart';
 
 import '../../../../app/routes.dart';
@@ -67,7 +68,8 @@ class SignUpOptions extends StatelessWidget {
                 children: [
                   WidgetsUtil.verticalSpace16,
                   TitleText(
-                    text: 'Login or Sign Up',
+                    text: AppLocalization.of(context)!
+                        .getTranslatedValues('loginOrSignUpLbl')!,
                     size: Constants.heading3,
                     weight: FontWeight.w500,
                   ),
@@ -78,8 +80,8 @@ class SignUpOptions extends StatelessWidget {
                       right: 24,
                     ),
                     child: TitleText(
-                      text:
-                          'Login or create an account to take quiz, take part in challenge, and more.',
+                      text: AppLocalization.of(context)!
+                          .getTranslatedValues('optionScreenTextLbl')!,
                       align: TextAlign.center,
                       size: Constants.bodyNormal,
                       textColor: Constants.grey2,
@@ -88,14 +90,11 @@ class SignUpOptions extends StatelessWidget {
                   ),
                   CustomButton(
                       height: 56,
-                      text: 'Login',
+                      text: AppLocalization.of(context)!
+                          .getTranslatedValues('loginLbl')!,
                       onPressed: () {
                         Navigator.of(context).pushNamed(Routes.loginScreen);
-                      }
-                      // => Get.to(
-                      //   () => const Login(),
-                      // ),
-                      ),
+                      }),
                   CustomButton(
                       height: 56,
                       backgroundColor: Constants.grey4,
@@ -103,19 +102,12 @@ class SignUpOptions extends StatelessWidget {
                       textColor: Constants.primaryColor,
                       onPressed: () {
                         Navigator.of(context).pushNamed(Routes.signupScreen);
-                      }
-                      // Get.to(
-                      //   () => const SignUpScreen(),
-                      // ),
-                      ),
+                      }),
                   const Spacer(),
                   InkWell(
                     onTap: () {
                       Navigator.pop(context);
                     },
-                    //  Get.to(
-                    //   () => Navigation(),
-                    // ),
                     child: TitleText(
                       text: 'Later',
                       textColor: Constants.grey2,

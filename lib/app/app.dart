@@ -77,7 +77,6 @@ Future<Widget> initializeApp() async {
 class GlobalScrollBehavior extends ScrollBehavior {
   @override
   ScrollPhysics getScrollPhysics(BuildContext context) {
-    SizeConfig.init(context);
     return BouncingScrollPhysics();
   }
 }
@@ -176,6 +175,8 @@ class MyApp extends StatelessWidget {
 
           return MaterialApp(
             builder: (context, widget) {
+              SizeConfig.init(context);
+
               return ScrollConfiguration(
                   behavior: GlobalScrollBehavior(), child: widget!);
             },

@@ -1,4 +1,0 @@
-com/staking_power/ios_insecure_screen_detector/IosInsecureScreenDetectorPlugin.java
- com.staking_power.ios_insecure_screen_detector.IosInsecureScreenDetectorPlugin
-com/staking_power/ios_insecure_screen_detector/BuildConfig.java
- com.staking_power.ios_insecure_screen_detector.BuildConfig

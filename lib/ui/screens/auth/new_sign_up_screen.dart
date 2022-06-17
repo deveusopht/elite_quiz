@@ -29,9 +29,7 @@ class SignUp extends StatelessWidget {
             onTap: () {
               log('Go to SignUpProcess');
 
-
-
-                Navigator.of(context).pushNamed(Routes.signupprocess);
+              Navigator.of(context).pushNamed(Routes.signupprocess);
               // Get.to(
               //   () => SignUpProcess(),
               // );
@@ -69,7 +67,6 @@ class SignUp extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  
                   // Get.to(
                   //   () => const Login(),
                   // );

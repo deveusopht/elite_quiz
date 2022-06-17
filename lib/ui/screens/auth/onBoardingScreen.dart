@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutterquiz/app/appLocalization.dart';
 import 'package:flutterquiz/utils/size_config.dart';
 
 import '../../../../app/routes.dart';
@@ -21,14 +22,15 @@ class OnBoarding extends StatefulWidget {
 
 class _OnBoardingState extends State<OnBoarding> {
   int selectedIndex = 0;
-  List<String> onBoarding = [
-    'Create gamified quizzes becomes simple',
-    'Find quizzes to test out your knowledge',
-    'Take part in challenges with friends',
-  ];
+  List<String> onBoarding = [];
 
   @override
   Widget build(BuildContext context) {
+    onBoarding = [
+      AppLocalization.of(context)!.getTranslatedValues('onBoardingIndex0')!,
+      AppLocalization.of(context)!.getTranslatedValues('onBoardingIndex1')!,
+      AppLocalization.of(context)!.getTranslatedValues('onBoardingIndex2')!,
+    ];
     return Scaffold(
       body: DefaultBackground(
         child: Column(
@@ -119,7 +121,8 @@ class _OnBoardingState extends State<OnBoarding> {
                     ),
                     const Spacer(),
                     CustomButton(
-                      text: 'Sign Up',
+                      text: AppLocalization.of(context)!
+                          .getTranslatedValues('signUpLbl')!,
                       onPressed: () {
                         Navigator.of(context).pushNamed(Routes.signupoptions);
                         // Get.to(() => const SignUpOptions());
@@ -135,7 +138,8 @@ class _OnBoardingState extends State<OnBoarding> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           TitleText(
-                            text: 'Already have an account? ',
+                            text: AppLocalization.of(context)!
+                                .getTranslatedValues('alreadyAccountLbl')!,
                             size: Constants.bodyNormal,
                             textColor: Colors.grey,
                             weight: FontWeight.w400,
@@ -143,15 +147,12 @@ class _OnBoardingState extends State<OnBoarding> {
                           InkWell(
                             onTap: () {
                               log('Login');
-                              // Get.to(
-                              //   () => const Login(),
-                              // );
-
                               Navigator.of(context)
                                   .pushNamed(Routes.loginScreen);
                             },
                             child: TitleText(
-                              text: 'Login',
+                              text: AppLocalization.of(context)!
+                                  .getTranslatedValues('loginLbl')!,
                               size: Constants.bodyNormal,
                               textColor: Constants.primaryColor,
                               weight: FontWeight.w500,

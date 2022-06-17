@@ -257,7 +257,7 @@ class SignInScreenState extends State<SignInScreen> {
   }
 
   Widget showEmailForForgotPwd() {
-    return TextFormField(
+    return TextFormField( 
         controller: edtEmailReset,
         keyboardType: TextInputType.emailAddress,
         validator: (val) => Validators.validateEmail(

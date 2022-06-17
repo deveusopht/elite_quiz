@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterquiz/ui/screens/aboutAppScreen.dart';
 import 'package:flutterquiz/ui/screens/appSettingsScreen.dart';
 import 'package:flutterquiz/ui/screens/auth/otpScreen.dart';
+import 'package:flutterquiz/ui/screens/auth/reset_password_screen.dart';
 import 'package:flutterquiz/ui/screens/auth/signInScreen.dart';
 
 import 'package:flutterquiz/ui/screens/auth/new_login_screen.dart';
@@ -60,6 +61,7 @@ class Routes {
   static const home = "/";
   static const onBoardingScreen = "onBoardingScreen";
   static const signupoptions = "signupoptions";
+  static const resetpswdScreen = "resetPswdScreen";
 
   static const loginScreen = "login";
   static const signupScreen = "signupScreen";
@@ -131,6 +133,8 @@ class Routes {
         return CupertinoPageRoute(builder: (context) => IntroSliderScreen());
       case onBoardingScreen:
         return CupertinoPageRoute(builder: (context) => OnBoarding());
+      case resetpswdScreen:
+        return CupertinoPageRoute(builder: (context) => ResetPassword());
 
       case loginScreen:
         // case login:

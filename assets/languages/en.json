@@ -23,15 +23,47 @@
   "otpNotMatch": "Otp does Not Match",
 
   "userLoginLbl": "User Login",
+  "loginWithGooleLbl": "Login with Google",
+  "loginWithFacebookLbl": "Login with Facebook",
+  "or": "OR", 
+
+
+
+  "emailFldLbl": "Email Address",
   "emailRequiredMsg": "Email is Required",
   "validEmail": "enter valid email",
   "emailLbl": "Email",
-  "pwdLengthMsg": "password should be more then 6 char long",
+  "pwdLengthMsg": "password should be more than 6 char long",
   "pwdLbl": "Password",
   "loginLbl": "Login",
+
   "enterEmailLbl": "Enter email address",
-  "forgotPwdLbl": "Forgot Password",
+  "forgotPwdLbl": "Forgot Password?",
+"termsLbl": "By continuing, you agree to the ",
+"termsAndServicesLbl" : "Terms of Services ",
+"termsLblAnd": "& ",
+"termsLblPrivacyPolicy": "Privacy Policy",
+
+"onBoardingIndex0":"Create gamified quizzes becomes simple",
+"onBoardingIndex1":"Find quizzes to test out your knowledge",
+"onBoardingIndex2":"Take part in challenges with friends",
+
+
+"signUpProcessIndex0":"What’s your email?",
+"signUpProcessIndex1":"What’s your password?",
+"signUpProcessIndex2":"Create a username",
+
+
+"loginOrSignUpLbl" : "Login or Sign Up",
+"optionScreenTextLbl":"Login or create an account to take quiz, take part in challenge, and more.",
+
+
+
+
+
+
   "resetPwdLbl": "Reset Password",
+  "enterEmlTextLbl" :  "Enter your email and we will send you a link to reset your password",
   "resetEnterEmailLbl": "Enter the email address associated with your account",
   "pwdResetLinkLbl": "Password reset link has been sent to your mail",
   "orLbl": "OR",

@@ -44,6 +44,13 @@ android {
     }
 
 
+     lintOptions {
+        disable 'InvalidPackage'
+        disable "Instantiatable"
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
     signingConfigs {
         release {
             storeFile file('E:\\keyStores\\tauqeer-keystore.jks')

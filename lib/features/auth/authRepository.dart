@@ -48,84 +48,85 @@ class AuthRepository {
     required String verificationId,
     required String smsCode,
   }) async {
-    try {
-      final result = await _authRemoteDataSource.signInUser(
-        authProvider,
-        email: email,
-        password: password,
-        smsCode: smsCode,
-        verificationId: verificationId,
-      );
-      final user = result['user'] as User;
-      bool isNewUser = result['isNewUser'] as bool;
+    // try {
+    final result = await _authRemoteDataSource.signInUser(
+      authProvider,
+      email: email,
+      password: password,
+      smsCode: smsCode,
+      verificationId: verificationId,
+    );
+    final user = result['user'] as User;
+    bool isNewUser = result['isNewUser'] as bool;
 
-      if (authProvider == AuthProvider.email) {
-        //check if user exist or not
-        final isUserExist = await _authRemoteDataSource.isUserExist(user.uid);
-        //if user does not exist add in database
-        if (!isUserExist) {
-          isNewUser = true;
-          final registeredUser = await _authRemoteDataSource.addUser(
-            email: user.email ?? "",
-            firebaseId: user.uid,
-            mobile: user.phoneNumber ?? "",
-            name: user.displayName ?? "",
-            type: getAuthTypeString(authProvider),
-            profile: user.photoURL ?? "",
-          );
-          print("JWT TOKEN is : ${registeredUser['api_token']}");
+    if (authProvider == AuthProvider.email) {
+      //check if user exist or not
+      final isUserExist = await _authRemoteDataSource.isUserExist(user.uid);
+      //if user does not exist add in database
+      if (!isUserExist) {
+        isNewUser = true;
+        final registeredUser = await _authRemoteDataSource.addUser(
+          email: user.email ?? "",
+          firebaseId: user.uid,
+          mobile: user.phoneNumber ?? "",
+          name: user.displayName ?? "",
+          type: getAuthTypeString(authProvider),
+          profile: user.photoURL ?? "",
+        );
+        print("JWT TOKEN is : ${registeredUser['api_token']}");
 
-          //store jwt token
-          await AuthLocalDataSource.setJwtToken(
-              registeredUser['api_token'].toString());
-        } else {
-          //get jwt token of user
-          final jwtToken = await _authRemoteDataSource.getJWTTokenOfUser(
-              firebaseId: user.uid, type: getAuthTypeString(authProvider));
-
-          //store jwt token
-          await AuthLocalDataSource.setJwtToken(jwtToken);
-
-          await _authRemoteDataSource.updateFcmId(
-              firebaseId: user.uid, userLoggingOut: false);
-        }
+        //store jwt token
+        await AuthLocalDataSource.setJwtToken(
+            registeredUser['api_token'].toString());
       } else {
-        if (isNewUser) {
-          //
-          final registeredUser = await _authRemoteDataSource.addUser(
-            email: user.email ?? "",
-            firebaseId: user.uid,
-            mobile: user.phoneNumber ?? "",
-            name: user.displayName ?? "",
-            type: getAuthTypeString(authProvider),
-            profile: user.photoURL ?? "",
-          );
+        //get jwt token of user
+        final jwtToken = await _authRemoteDataSource.getJWTTokenOfUser(
+            firebaseId: user.uid, type: getAuthTypeString(authProvider));
 
-          //store jwt token
-          print("JWT TOKEN is : ${registeredUser['api_token']}");
-          await AuthLocalDataSource.setJwtToken(registeredUser['api_token']);
-        } else {
-          //get jwt token of user
-          final jwtToken = await _authRemoteDataSource.getJWTTokenOfUser(
-              firebaseId: user.uid, type: getAuthTypeString(authProvider));
+        //store jwt token
+        await AuthLocalDataSource.setJwtToken(jwtToken);
 
-          print("Jwt token $jwtToken");
-          //store jwt token
-          await AuthLocalDataSource.setJwtToken(jwtToken);
-          //
-          await _authRemoteDataSource.updateFcmId(
-              firebaseId: user.uid, userLoggingOut: false);
-        }
+        await _authRemoteDataSource.updateFcmId(
+            firebaseId: user.uid, userLoggingOut: false);
       }
-      return {
-        "user": user,
-        "isNewUser": isNewUser,
-      };
-    } catch (e) {
-      print(e.toString());
-      signOut(authProvider);
-      throw AuthException(errorMessageCode: e.toString());
+    } else {
+      if (isNewUser) {
+        //
+        final registeredUser = await _authRemoteDataSource.addUser(
+          email: user.email ?? "",
+          firebaseId: user.uid,
+          mobile: user.phoneNumber ?? "",
+          name: user.displayName ?? "",
+          type: getAuthTypeString(authProvider),
+          profile: user.photoURL ?? "",
+        );
+
+        //store jwt token
+        print("JWT TOKEN is : ${registeredUser['api_token']}");
+        await AuthLocalDataSource.setJwtToken(registeredUser['api_token']);
+      } else {
+        //get jwt token of user
+        final jwtToken = await _authRemoteDataSource.getJWTTokenOfUser(
+            firebaseId: user.uid, type: getAuthTypeString(authProvider));
+
+        print("Jwt token $jwtToken");
+        //store jwt token
+        await AuthLocalDataSource.setJwtToken(jwtToken);
+        //
+        await _authRemoteDataSource.updateFcmId(
+            firebaseId: user.uid, userLoggingOut: false);
+      }
     }
+    return {
+      "user": user,
+      "isNewUser": isNewUser,
+    };
+    // } catch (e) {
+    //   print("hehehe ${e.toString()}");
+
+    //   signOut(authProvider);
+    //   throw AuthException(errorMessageCode: e.toString());
+    // }
   }
 
   //to signUp user

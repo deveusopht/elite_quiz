@@ -64,6 +64,7 @@ class AuthRemoteDataSource {
       throw AuthException(errorMessageCode: e.toString());
     } catch (e) {
       //print(e.toString());
+      print("error , user not found ${e.toString()}");
       throw AuthException(errorMessageCode: defaultErrorMessageCode);
     }
   }
@@ -188,9 +189,10 @@ class AuthRemoteDataSource {
           throw AuthException(errorMessageCode: defaultErrorMessageCode);
         }
       } else if (authProvider == AuthProvider.email) {
+        print("email provider");
         UserCredential userCredential =
             await signInWithEmailAndPassword(email!, password!);
-
+        print('User: ${userCredential.user?.email}');
         result['user'] = userCredential.user!;
         result['isNewUser'] = userCredential.additionalUserInfo!.isNewUser;
       } else if (authProvider == AuthProvider.apple) {

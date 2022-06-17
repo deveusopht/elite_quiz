@@ -13,7 +13,9 @@ class CustomTextField extends StatelessWidget {
   final dynamic prefixIcon;
   final Function()? onSuffixTap;
   final Function()? onTap;
+  final String? Function(String?)? onSaved;
   final Color? fillColor;
+  final TextInputType? keyboardtype;
   final Color? iconTextColor;
   final Color? borderColor;
   final bool showBorder;
@@ -37,6 +39,7 @@ class CustomTextField extends StatelessWidget {
     this.hidetext,
     this.controller,
     required this.hint,
+    this.keyboardtype,
     this.prefixIcon,
     this.suffixIcon,
     this.onSuffixTap,
@@ -44,6 +47,7 @@ class CustomTextField extends StatelessWidget {
     this.iconTextColor,
     this.showBorder = false,
     this.onTap,
+    this.onSaved,
     this.node,
     this.textSize,
     this.titleWeight,
@@ -91,8 +95,9 @@ class CustomTextField extends StatelessWidget {
             maxLines: maxLines ?? 1,
             focusNode: node,
             onTap: onTap,
-            obscureText: hidetext!,
-            obscuringCharacter: obscuringCharacter!,
+            onSaved: onSaved,
+            obscureText: hidetext ?? false,
+            obscuringCharacter: obscuringCharacter ?? "*",
             decoration: InputDecoration(
               filled: true,
               fillColor: fillColor ?? Constants.white,
