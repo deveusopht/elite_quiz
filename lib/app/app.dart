@@ -76,6 +76,7 @@ Future<Widget> initializeApp() async {
 class GlobalScrollBehavior extends ScrollBehavior {
   @override
   ScrollPhysics getScrollPhysics(BuildContext context) {
+    SizeConfig.init(context);
     return BouncingScrollPhysics();
   }
 }

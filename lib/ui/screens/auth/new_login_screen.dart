@@ -1,14 +1,15 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutterquiz/ui/widgets/default_layout.dart';
 
+import '../../../app/routes.dart';
 import '../../../utils/assets.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/widgets_util.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_divider.dart';
 import '../../widgets/custom_text_field.dart';
+import '../../widgets/default_layout.dart';
 import '../../widgets/social_button.dart';
 import '../../widgets/terms.dart';
 import '../../widgets/title_text.dart';

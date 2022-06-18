@@ -16,7 +16,6 @@ class DefaultBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Constants.primaryColor,
       body: Stack(
         children: [
           Container(
