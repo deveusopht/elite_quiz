@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterquiz/ui/navigation.dart';
 import 'package:flutterquiz/ui/screens/aboutAppScreen.dart';
 import 'package:flutterquiz/ui/screens/appSettingsScreen.dart';
 import 'package:flutterquiz/ui/screens/auth/otpScreen.dart';
@@ -17,6 +18,7 @@ import 'package:flutterquiz/ui/screens/coinStoreScreen.dart';
 import 'package:flutterquiz/ui/screens/exam/examScreen.dart';
 import 'package:flutterquiz/ui/screens/exam/examsScreen.dart';
 import 'package:flutterquiz/ui/screens/home/homeScreen.dart';
+import 'package:flutterquiz/ui/screens/home/new_home_screen.dart';
 import 'package:flutterquiz/ui/screens/introSliderScreen.dart';
 import 'package:flutterquiz/ui/screens/leaderBoardScreen.dart';
 import 'package:flutterquiz/ui/screens/notificationScreen.dart';
@@ -56,6 +58,7 @@ import '../ui/screens/auth/new_sign_up_screen.dart';
 import '../ui/screens/auth/onBoardingScreen.dart';
 import '../ui/screens/auth/sign_up_options.dart';
 import '../ui/screens/auth/sign_up_process.dart';
+import '../ui/screens/new_splash.dart';
 
 class Routes {
   static const home = "/";
@@ -66,6 +69,7 @@ class Routes {
   static const loginScreen = "login";
   static const signupScreen = "signupScreen";
   static const signupprocess = "signupprocess";
+  static const create = "createScreen";
 
   // static const login = "login";
   static const splash = 'splash';
@@ -126,9 +130,9 @@ class Routes {
     print("Current Route is $currentRoute");
     switch (routeSettings.name) {
       case splash:
-        return CupertinoPageRoute(builder: (context) => SplashScreen());
+        return CupertinoPageRoute(builder: (context) => Splash());
       case home:
-        return HomeScreen.route(routeSettings);
+        return CupertinoPageRoute(builder: (context) => Navigation());
       case introSlider:
         return CupertinoPageRoute(builder: (context) => IntroSliderScreen());
       case onBoardingScreen:
@@ -143,6 +147,8 @@ class Routes {
 
       case signupoptions:
         return CupertinoPageRoute(builder: (context) => SignUpOptions());
+      //  case signupoptions:
+      // return CupertinoPageRoute(builder: (context) => CreateScreen());
       case signupScreen:
         return CupertinoPageRoute(builder: (context) => SignUp());
       case signupprocess:

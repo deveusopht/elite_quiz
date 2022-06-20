@@ -18,18 +18,18 @@ import 'package:flutterquiz/features/battleRoom/cubits/battleRoomCubit.dart';
 import 'package:flutterquiz/features/battleRoom/cubits/multiUserBattleRoomCubit.dart';
 import 'package:flutterquiz/features/bookmark/bookmarkRepository.dart';
 import 'package:flutterquiz/features/bookmark/cubits/audioQuestionBookmarkCubit.dart';
+import 'package:flutterquiz/features/bookmark/cubits/bookmarkCubit.dart';
 import 'package:flutterquiz/features/bookmark/cubits/guessTheWordBookmarkCubit.dart';
 import 'package:flutterquiz/features/exam/cubits/examCubit.dart';
 import 'package:flutterquiz/features/exam/examRepository.dart';
 import 'package:flutterquiz/features/localization/appLocalizationCubit.dart';
 import 'package:flutterquiz/features/profileManagement/cubits/userDetailsCubit.dart';
-import 'package:flutterquiz/features/bookmark/cubits/bookmarkCubit.dart';
+import 'package:flutterquiz/features/profileManagement/profileManagementRepository.dart';
 import 'package:flutterquiz/features/quiz/cubits/comprehensionCubit.dart';
 import 'package:flutterquiz/features/quiz/cubits/quizCategoryCubit.dart';
 import 'package:flutterquiz/features/quiz/cubits/subCategoryCubit.dart';
 import 'package:flutterquiz/features/quiz/quizRepository.dart';
 import 'package:flutterquiz/features/settings/settingsCubit.dart';
-import 'package:flutterquiz/features/profileManagement/profileManagementRepository.dart';
 import 'package:flutterquiz/features/settings/settingsLocalDataSource.dart';
 import 'package:flutterquiz/features/settings/settingsRepository.dart';
 import 'package:flutterquiz/features/statistic/cubits/statisticsCubit.dart';
@@ -45,7 +45,6 @@ import 'package:flutterquiz/utils/constants.dart';
 import 'package:flutterquiz/utils/size_config.dart';
 import 'package:flutterquiz/utils/uiUtils.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:hive_flutter/hive_flutter.dart';
 
 Future<Widget> initializeApp() async {
@@ -91,7 +90,6 @@ class MyApp extends StatelessWidget {
     precacheImage(AssetImage(UiUtils.getImagePath("map_finding.png")), context);
     precacheImage(
         AssetImage(UiUtils.getImagePath("scratchCardCover.png")), context);
-
     return MultiBlocProvider(
       //providing global providers
       providers: [
@@ -176,7 +174,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             builder: (context, widget) {
               SizeConfig.init(context);
-
+              
               return ScrollConfiguration(
                   behavior: GlobalScrollBehavior(), child: widget!);
             },

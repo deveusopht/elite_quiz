@@ -22,6 +22,11 @@
   "requestOtpLbl": "OTP کی درخواست کریں۔",
   "otpNotMatch": "او ٹی پی مماثل نہیں ہے۔",
 
+
+
+  "createAccountLbl" : "اکاؤنٹ بنائیں",
+  "laterLbl" : "بعد میں",
+
   "userLoginLbl": "صارف لاگ ان",
   "loginWithGooleLbl" : "گوگل کے ساتھ لاگ ان کریں",
   "loginWithFacebookLbl" : "فیس بک کے ساتھ لاگ ان کریں",
@@ -479,9 +484,10 @@
   "youWillGet" : "You will get",
   "theyWillGet" : "They will get",
 
-  "wonMathQuiz" : "Won Math Quiz"
-   
-
-
-
+  "wonMathQuiz" : "Won Math Quiz",
+  "invalidEmail": "غلط ای میل",
+  "whatIsEmail": "آپ کا ای میل کیا ہے؟",
+  "whatIsPassword": "آپ کا پاس ورڈ کیا ہے؟",
+  "confirmPassword": "اپنے پاس ورڈ کی تصدیق کریں!",
+  "passwordNotMatch": "پاس ورڈز مماثل نہیں ہیں!"
 }

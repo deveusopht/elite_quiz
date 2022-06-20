@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutterquiz/ui/widgets/title_text.dart';
+import 'package:flutterquiz/utils/assets.dart';
 
-import '../../utils/assets.dart';
 import '../../utils/constants.dart';
+import 'title_text.dart';
 
 class DefaultLayout extends StatelessWidget {
   final String title;
@@ -41,7 +41,7 @@ class DefaultLayout extends StatelessWidget {
           action ?? SizedBox(),
         ],
         leading: InkWell(
-          onTap: () => {},
+          onTap: () => Navigator.pop(context),
           child: Container(
             padding: const EdgeInsets.all(
               15,

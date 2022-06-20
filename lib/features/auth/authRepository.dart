@@ -121,9 +121,7 @@ class AuthRepository {
       "user": user,
       "isNewUser": isNewUser,
     };
-    // } catch (e) {
-    //   print("hehehe ${e.toString()}");
-
+   
     //   signOut(authProvider);
     //   throw AuthException(errorMessageCode: e.toString());
     // }

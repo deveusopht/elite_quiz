@@ -1,14 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutterquiz/app/appLocalization.dart';
-import 'package:flutterquiz/ui/screens/auth/signUpScreen.dart';
 
-import '../../../../app/routes.dart';
-import '../../../../utils/assets.dart';
-import '../../../../utils/constants.dart';
-import '../../../../utils/widgets_util.dart';
-
+import '../../../app/appLocalization.dart';
+import '../../../app/routes.dart';
+import '../../../utils/assets.dart';
+import '../../../utils/constants.dart';
+import '../../../utils/widgets_util.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_card.dart';
 import '../../widgets/default_background.dart';
@@ -98,7 +94,8 @@ class SignUpOptions extends StatelessWidget {
                   CustomButton(
                       height: 56,
                       backgroundColor: Constants.grey4,
-                      text: 'Create Account',
+                      text: AppLocalization.of(context)!
+                          .getTranslatedValues('createAccountLbl')!,
                       textColor: Constants.primaryColor,
                       onPressed: () {
                         Navigator.of(context).pushNamed(Routes.signupScreen);
@@ -109,7 +106,8 @@ class SignUpOptions extends StatelessWidget {
                       Navigator.pop(context);
                     },
                     child: TitleText(
-                      text: 'Later',
+                      text: AppLocalization.of(context)!
+                          .getTranslatedValues('laterLbl')!,
                       textColor: Constants.grey2,
                       size: Constants.bodyNormal,
                       weight: FontWeight.w500,

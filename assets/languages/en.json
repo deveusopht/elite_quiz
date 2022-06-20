@@ -22,6 +22,11 @@
   "requestOtpLbl": "Request OTP",
   "otpNotMatch": "Otp does Not Match",
 
+
+  "createAccountLbl" : "Create Account",
+  "laterLbl" : "Later",
+
+
   "userLoginLbl": "User Login",
   "loginWithGooleLbl": "Login with Google",
   "loginWithFacebookLbl": "Login with Facebook",
@@ -465,13 +470,10 @@
   "appUnderMaintenance" : "We apologize for the inconvenience, but we are performing some maintenance. We will back soon",
   "youWillGet" : "You will get",
   "theyWillGet" : "They will get",
-  "wonMathQuiz" : "Won Math Quiz"
-  
-   
-
-
-  
-  
- 
-  
+  "wonMathQuiz" : "Won Math Quiz",
+  "invalidEmail": "Invalid Email",
+  "whatIsEmail": "What's your email?",
+  "whatIsPassword": "What's your password?",
+  "confirmPassword": "Confirm your password!",
+  "passwordNotMatch": "Password don't match!"
 }

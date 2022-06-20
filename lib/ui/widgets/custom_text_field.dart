@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterquiz/ui/widgets/title_text.dart';
-import 'package:flutterquiz/utils/validators.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sms_autofill/sms_autofill.dart';
 
 import '../../utils/constants.dart';
 
@@ -31,6 +29,8 @@ class CustomTextField extends StatelessWidget {
   final String? Function(String?)? validator;
   final bool? hidetext;
   final String? obscuringCharacter;
+  final void Function(String)? onFieldSubmitted;
+  final TextInputAction? textInputAction;
 
   CustomTextField({
     Key? key,
@@ -57,6 +57,8 @@ class CustomTextField extends StatelessWidget {
     this.validator,
     this.mainAxisAlignment,
     this.horizontalMargin,
+    this.onFieldSubmitted,
+    this.textInputAction,
   }) : super(key: key);
 
   bool isColorDark(Color color) {
@@ -98,6 +100,8 @@ class CustomTextField extends StatelessWidget {
             onSaved: onSaved,
             obscureText: hidetext ?? false,
             obscuringCharacter: obscuringCharacter ?? "*",
+            onFieldSubmitted: onFieldSubmitted,
+            textInputAction: textInputAction,
             decoration: InputDecoration(
               filled: true,
               fillColor: fillColor ?? Constants.white,

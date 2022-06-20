@@ -2,11 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 
-import '../../../../app/routes.dart';
-import '../../../../utils/assets.dart';
-import '../../../../utils/constants.dart';
-import '../../../../utils/widgets_util.dart';
-
+import '../../../app/routes.dart';
+import '../../../utils/assets.dart';
+import '../../../utils/constants.dart';
+import '../../../utils/widgets_util.dart';
 import '../../widgets/default_layout.dart';
 import '../../widgets/social_button.dart';
 import '../../widgets/terms.dart';

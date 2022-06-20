@@ -343,7 +343,9 @@ class _HomeScreenState extends State<HomeScreen>
   Future<String> _downloadAndSaveFile(String url, String fileName) async {
     final Directory directory = await getApplicationDocumentsDirectory();
     final String filePath = '${directory.path}/$fileName';
+    print(" The Url is $url");
     final http.Response response = await http.get(Uri.parse(url));
+    print("The Response is $response");
     final File file = File(filePath);
     await file.writeAsBytes(response.bodyBytes);
     return filePath;

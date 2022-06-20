@@ -14,8 +14,6 @@ import '../../widgets/default_background.dart';
 import '../../widgets/title_text.dart';
 
 class OnBoarding extends StatefulWidget {
-  OnBoarding({Key? key}) : super(key: key);
-
   @override
   State<OnBoarding> createState() => _OnBoardingState();
 }
@@ -36,8 +34,8 @@ class _OnBoardingState extends State<OnBoarding> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              height: SizeConfig.screenHeight * 0.67,
+            Expanded(
+              flex: 7,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -101,6 +99,7 @@ class _OnBoardingState extends State<OnBoarding> {
               ),
             ),
             Expanded(
+              flex: 4,
               child: CustomCard(
                 height: SizeConfig.screenHeight * 0.28,
                 child: Column(
@@ -147,6 +146,10 @@ class _OnBoardingState extends State<OnBoarding> {
                           InkWell(
                             onTap: () {
                               log('Login');
+                              // Get.to(
+                              //   () => const Login(),
+                              // );
+
                               Navigator.of(context)
                                   .pushNamed(Routes.loginScreen);
                             },
