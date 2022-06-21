@@ -73,6 +73,9 @@ class QuizType {
   String getTitle(BuildContext context) {
     return AppLocalization.of(context)!.getTranslatedValues(this.title)!;
   }
+
+
+
 /*
   static QuizType fromJson(Map<String, dynamic> parsedJson) {
     return new QuizType(

@@ -782,6 +782,7 @@ class _HomeScreenState extends State<HomeScreen>
                             AppLocalization.of(context)!
                                 .getTranslatedValues(selfChallengeLbl)!,
                             style: TextStyle(
+                              
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold,
                               color: Theme.of(context).primaryColor,

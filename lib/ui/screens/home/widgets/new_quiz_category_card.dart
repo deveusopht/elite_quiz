@@ -1,21 +1,23 @@
 import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../utils/constants.dart';
 import '../../../widgets/title_text.dart';
 
 class QuizCategoryCard extends StatelessWidget {
   final String asset, name, category;
-  final int quizNumber;
+  final Function()? onTap;
+
   final double? horizontalMargin;
   const QuizCategoryCard({
     Key? key,
     required this.asset,
     required this.name,
     required this.category,
-    required this.quizNumber,
     this.horizontalMargin,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -36,16 +38,20 @@ class QuizCategoryCard extends StatelessWidget {
       ),
       clipBehavior: Clip.antiAlias,
       child: ListTile(
-        onTap: () {
-          log('Category tapped');
-          // Get.to(Quiz());
-        },
+        onTap: onTap,
         contentPadding: const EdgeInsets.all(8.0),
-        leading: Image.asset(
-          asset,
-          height: 64,
-          width: 64,
-        ),
+        leading: asset.contains('.svg')
+            ? SvgPicture.asset(
+                asset,
+                height: 64,
+                width: 64,
+                color: Constants.primaryColor,
+              )
+            : Image.asset(
+                asset,
+                height: 64,
+                width: 64,
+              ),
         title: TitleText(
           text: name,
           size: Constants.bodyNormal,
@@ -53,7 +59,7 @@ class QuizCategoryCard extends StatelessWidget {
           textColor: Constants.black1,
         ),
         subtitle: TitleText(
-          text: '$category ◆ $quizNumber',
+          text: '$category',
           size: Constants.bodyXSmall,
           weight: FontWeight.w400,
         ),
